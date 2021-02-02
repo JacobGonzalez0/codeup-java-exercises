@@ -1,4 +1,6 @@
-class Running{
+package src;
+
+class Running {
     public static void main(String[] args) {
         Person person1 = new Person();
         person1.setName("Jacob");

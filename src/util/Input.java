@@ -1,9 +1,11 @@
+package src.util;
+
 import java.util.Scanner;
 
-class InputTest{
+class Inputapp{
 
     public static void main(String[] args) {
-        Inputc iH = new Inputc();
+        Input iH = new Input();
         System.out.println("What is your name?");
         String input = iH.getString();
         System.out.println("Hi " + input);
@@ -32,15 +34,15 @@ class InputTest{
 
 }
 
-class Inputc {
+public class Input {
 
     private Scanner _input = new Scanner(System.in);
 
-    String getString(){
+    public String getString(){
         return _input.nextLine();
     }
 
-    Boolean yesNo(){
+    public Boolean yesNo(){
         String answer = _input.nextLine();
         if(!answer.isEmpty() ){
             return yesNo();
@@ -51,13 +53,13 @@ class Inputc {
         }
     }
 
-    int getInt(){
+    public int getInt(){
         
         return _input.nextInt();
 
     }
 
-    int getInt(int min, int max){
+    public int getInt(int min, int max){
         
         int n = _input.nextInt();
 
@@ -68,7 +70,7 @@ class Inputc {
         }
     }
 
-    double getDouble(double min, double max){
+    public double getDouble(double min, double max){
         double n = Double.parseDouble(_input.nextLine());
 
         if(n >= min && n <= max){
@@ -78,7 +80,7 @@ class Inputc {
         }
     }
 
-    double getDouble(){
+    public double getDouble(){
         return Double.parseDouble(_input.nextLine());
     }
 
