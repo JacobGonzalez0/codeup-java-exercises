@@ -17,11 +17,11 @@ public class Movie {
         return category;
     }
 
-    public String setName(String n){
+    public void setName(String n){
         name = n;
     }
 
-    public String setCategory(String n ){
+    public void setCategory(String n ){
         category = n;
     }
     
