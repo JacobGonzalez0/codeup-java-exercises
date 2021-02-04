@@ -5,9 +5,9 @@ import src.util.*;
 public class MoviesApplication {
     private static Input ih;
     private static Boolean running;
+
     public static void main(String[] args) {
         ih = new Input();
-
         running = true;
 
         while(running){
@@ -29,15 +29,15 @@ public class MoviesApplication {
                 case 0: System.out.println("Goodbye!");
                     running = false;
                 break;
-                case 1: 
+                case 1: getMoviesCat();
                 break;
-                case 2:
+                case 2: getMoviesCat("animated");
                 break;
-                case 3:
+                case 3: getMoviesCat("drama");
                 break;
-                case 4:
+                case 4: getMoviesCat("horror");
                 break;
-                case 5:
+                case 5: getMoviesCat("scifi");
                 break;
                 default: System.out.println("Invalid choice");
                 break;
@@ -48,9 +48,26 @@ public class MoviesApplication {
         
     }
 
+    public static void getMoviesCat(){
+        System.out.println("");
 
-    public void getMoviesCat(String c){
+        Movie[] list = MoviesArray.findAll();
+        for(Movie movie : list){
+            System.out.println(movie.getName() + " -- " + movie.getCategory());
+        }   
+        System.out.println("");
+    }
+
+    public static void getMoviesCat(String c){
             
-        
+        System.out.println("");
+
+        Movie[] list = MoviesArray.findAll();
+        for(Movie movie : list){
+            if(movie.getCategory() == c){
+                System.out.println(movie.getName() + " -- " + movie.getCategory());
+            }
+        }   
+        System.out.println("");
     }
 }
